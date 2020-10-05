@@ -7,7 +7,7 @@ This plugin uses a slightly modified version of PocketSphinx, to support passing
 The modified code is contained within the _other folder.
 
 # Information
-Please read https://wiki.unrealengine.com/Speech_Recognition_Plugin for usage information.
+Please read https://www.ue4community.wiki/legacy/speech-recognition-plugin-yg8mvl5w for usage information.
 
-I would love any feedback/advice on the plugin.
-Feel free to fork the code, or to contact me at shane.colbert@gmail.com
+# This form
+I only fix the plugin compilation under Unreal Engine 4.25. That's it.
