@@ -17,7 +17,8 @@
 #include <vector>
 #include <utility>
 
-//General Log
+#include "SpeechRecognition.h"
+
 DECLARE_LOG_CATEGORY_EXTERN(SpeechRecognitionPlugin, Log, All);
 
 #define SENSCR_SHIFT 10

@@ -1,13 +1,10 @@
-// Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
-
 #pragma once
 
 #include "SpeechRecognition.h"
-#include "ModuleManager.h"
+#include "Modules/ModuleManager.h"
 
 class ISpeechRecognition : public IModuleInterface
 {
-
 	int32 instanceCtr;
 
 public:
@@ -15,7 +12,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Audio")
 	static inline ISpeechRecognition& Get()
 	{
-		return FModuleManager::LoadModuleChecked< ISpeechRecognition >( "SpeechRecognition" );
+		return FModuleManager::LoadModuleChecked<ISpeechRecognition>("SpeechRecognition");
 	}
 
 	UFUNCTION(BlueprintCallable, Category = "Audio")
@@ -29,6 +26,4 @@ public:
 	{
 		return instanceCtr++;
 	}
-
 };
-

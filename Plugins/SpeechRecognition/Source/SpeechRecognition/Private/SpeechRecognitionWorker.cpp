@@ -1,7 +1,5 @@
-#include "SpeechRecognition.h"
 #include "SpeechRecognitionWorker.h"
 
-//General Log
 DEFINE_LOG_CATEGORY(SpeechRecognitionPlugin);
 
 FSpeechRecognitionWorker::FSpeechRecognitionWorker() {}
@@ -99,9 +97,9 @@ bool FSpeechRecognitionWorker::EnableKeywordMode(TArray<FRecognitionPhrase> word
 }
 
 
-void FSpeechRecognitionWorker::AddWords(TArray<FRecognitionPhrase> keywords) {
+void FSpeechRecognitionWorker::AddWords(TArray<FRecognitionPhrase> InKeywords) {
 	this->keywords.clear();
-	for (auto It = keywords.CreateConstIterator(); It; ++It)
+	for (auto It = InKeywords.CreateConstIterator(); It; ++It)
 	{
 		FRecognitionPhrase word = *It;
 		std::string wordStr = std::string(TCHAR_TO_UTF8(*word.phrase));
@@ -157,7 +155,7 @@ void FSpeechRecognitionWorker::AddWords(TArray<FRecognitionPhrase> keywords) {
 void FSpeechRecognitionWorker::SetLanguage(ESpeechRecognitionLanguage language) {
 
 	// set Content Path
-	FString contentPath = FPaths::ConvertRelativePathToFull(FPaths::GameContentDir());
+	FString contentPath = FPaths::ConvertRelativePathToFull(FPaths::ProjectPluginsDir());
 	contentPath_str = std::string(TCHAR_TO_UTF8(*contentPath));
 	std::string languageString;
 
